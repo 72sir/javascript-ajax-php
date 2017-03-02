@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" content="text/html">
+	<title>Просмотр комментариев</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/stat_ajax.js"></script>
+	<script type="text/javascript" src="/js/style/style_falling_outside_line.js"></script>
+	<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Таблица со списком тех регионов у которых количество комментариев > 5.</h2>
+				<div class='form-group has-feedback'>
+					<button onclick="SwapAll(false);">Свернуть все</button>
+					<button onclick="SwapAll(true);">Развернуть все</button>
+					<br>
+					<br>
+					<table id="myTable1" class="table treetable1">
+						<thead>
+							<tr>
+								<th>Регион</th>
+								<th></th>
+								<th>Колличество комметариев</th>
+							</tr>
+						</thead>
+						<tbody id="placeholder1"></tbody>
+					</table>
+					<h2>Таблица со списком тех регионов у которых количество комментариев < 5.</h2>
+					<table id="myTable2" class="table treetable2">
+						<thead>
+							<tr>
+								<th>Регион</th>
+								<th></th>
+								<th>Колличество комметариев</th>
+							</tr>
+						</thead>
+						<tbody id="placeholder2"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+

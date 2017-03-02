@@ -1,0 +1,42 @@
+.treetable2 label a{
+	cursor:pointer;
+	color:#000;
+	font-weight:bold;
+	padding-left:16px;
+}
+.treetable2 tr {
+	display:none;
+}
+.treetable2 thead tr {
+	display:table-row;
+}
+.treetable2 .lev1 {
+	display:table-row;
+}
+.treetable1 label a{
+	cursor:pointer;
+	color:#000;
+	font-weight:bold;
+	padding-left:16px;
+}
+.treetable1 tr {
+	display:none;
+}
+.treetable1 thead tr {
+	display:table-row;
+}
+.treetable1 .lev1 {
+	display:table-row;
+}
+input[type="checkbox"]{
+	display:none;
+}
+input + a {
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAIAAAAmzuBxAAAACXBIWXMAAAsSAAALEgHS3X78AAAAkElEQVQYlXWOvRWDQAyDv/DYK2wQSro8OkpGuRFcUjJCRmEE0TldCpsjPy9qzj7Jki62Pgh4vnqbbbEWuN+use/PlArwHccWGg780psENGFY6W4YgxZIAM339WmT3m397YYxxn6aASslFfVotYLTT3NwcuTKlFpNR2sdEak4acdKeafPlE2SZ7sw/1BEtX94AXYTVmyR94mPAAAAAElFTkSuQmCC)
+	no-repeat 0px 5px;
+}
+input:checked + a{
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAIAAAAmzuBxAAAACXBIWXMAAAsSAAALEgHS3X78AAAAeklEQVQYlX2PsRGDMAxFX3zeK9mAlHRcupSM4hFUUjJCRpI70VHIJr7D8BtJ977+SQ9Zf7isVG16WSQC0/D0OW/FqoBlDFkIVJ2xAhA8sI/NHbcYiFrPfI0fGklKagDx2F4ltdtaM0J9L3dxcVxi+zv62E+MwPs7c60dClRP6iug7wUAAAAASUVORK5CYII=)
+	no-repeat 0px 5px;
+}
+td+td+td+td {text-align:right;}
