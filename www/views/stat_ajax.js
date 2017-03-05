@@ -1,6 +1,6 @@
 $.ajax({
 	type: "GET",
-	url: "php/wrap/stat/number_of_comments_by_country.php",
+	url: "www/controllers/stat_sumCommentInCountry.php",
 	dataType: "JSON",
 	//data: "",
 	success: function(data){

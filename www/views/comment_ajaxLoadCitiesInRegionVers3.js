@@ -14,13 +14,13 @@ $(document).ready(function () {
          * В переменную country_id положим значение селекта
          * (выбранная страна)
          */
-        var country_id = $(this).val();
+        var country = $(this).val();
         /*
          * Если значение селекта равно 0,
          * т.е. не выбрана страна, то мы
          * не будем ничего делать
          */
-        if (country_id == '0') {
+        if (country == '0') {
             $('#region').html('<option>- выберите город -</option>');
             $('#region').attr('disabled', true);
             return(false);
@@ -35,7 +35,7 @@ $(document).ready(function () {
         /*
          * url запроса городов
          */
-        var url = '/php/views/comment_loadCitiesInRegion.php';
+        var url = '/www/controllers/comment_loadCitiesInRegion.php';
 
         $.post(
             url,

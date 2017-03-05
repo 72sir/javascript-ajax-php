@@ -4,7 +4,7 @@
  */
 $.ajax({
     type: "POST",
-    url: "/php/views/comment_allRegion.php",
+    url: "/www/controllers/comment_allRegion.php",
     dataType: "json",
     //data: "",
     success: function(data){
@@ -15,6 +15,6 @@ $.ajax({
         document.getElementById("country").innerHTML=output;
     },
     error: function(){
-        alert('Проверьте подключение к php серверу.');
+        alert('Проверьте подключение к www серверу.');
     }
 });

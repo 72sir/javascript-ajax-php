@@ -13,7 +13,8 @@
     if (isset($lastName) && isset($firstName) && isset($middleName) && isset($phoneName) && isset($emailName)
        && isset($country_id) && isset($city_id) && isset($commentName)) {
         $query="INSERT INTO `users`(`lastName`, `firstName`, `middleName`, `phoneName`, `emailName`, `country_id`, `city_id`, `commentName`)
-        VALUES ('$lastName', '$firstName', '$middleName', '$phoneName', '$emailName', $country_id, $city_id, '$commentName')";
+        VALUES ('" . $lastName . "', '" . $firstName . "', '" . $middleName . "', '" . $phoneName . "',
+        '" . $emailName . "'," . $country_id . ", " . $city_id . ", '". $commentName . "')";
 
         print Sql_query($query);
     }

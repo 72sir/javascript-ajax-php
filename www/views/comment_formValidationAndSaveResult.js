@@ -108,7 +108,7 @@ $(document).ready(function(){
 
 			$.ajax({
 				type: "POST", // HTTP метод  POST или GET
-				url: "/php/views/comment_save.php", //url-адрес, по которому будет отправлен запрос
+				url: "/www/controllers/comment_save.php", //url-адрес, по которому будет отправлен запрос
 				dataType: "text", // Тип данных,  которые пришлет сервер в ответ на запрос ,например, HTML, json
 				data: {
 					"lastName": lastName,

@@ -1,6 +1,6 @@
 $.ajax({
 	type: "GET",
-	url: "/php/wrap/view/view_request.php",
+	url: "/www/controllers/view_query.php",
 	dataType: "text",
 	//data: "",
 	success: function(data){
@@ -35,7 +35,7 @@ function deleteRow(r) {
 
 	jQuery.ajax({
 		type: "POST", // HTTP метод  POST или GET
-		url: "/php/wrap/view/delete_user.php", //url-адрес, по которому будет отправлен запрос
+		url: "/www/controllers/view_deleteCommentary.www", //url-адрес, по которому будет отправлен запрос
 		dataType:"text", // Тип данных
 		data: {
 			"user_id": val
