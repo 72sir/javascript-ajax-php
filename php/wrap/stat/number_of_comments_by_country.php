@@ -1,5 +1,5 @@
 <?php
-	include("/../../db/connect.php");
+    require __DIR__ . '/../../db/connect.php';
 
 	$query="SELECT r.name as rName, c.name as cName, COUNT( u.commentName ) AS countComment
 			FROM  `users` as u 

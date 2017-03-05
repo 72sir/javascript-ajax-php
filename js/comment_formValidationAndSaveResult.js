@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	// по умолчанию заносим пустоту
 	var validLastName = false;
@@ -19,8 +20,8 @@ $(document).ready(function(){
 		var phoneName = $("#phoneName").val();
 		var emailName = $("#emailName").val();
 		var commentName = $("#commentName").val();
-		var country_id = $("#country_id").val();
-		var city_id = $("#region_id").val();
+		var country = $("#country").val();
+		var city = $("#region").val();
 
 		var patternName = /^[A-Za-zА-Яа-яЁё]{2,20}$/;
 		var patternPhone = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
@@ -81,21 +82,21 @@ $(document).ready(function(){
 			validCommentName = true;
 		}
 
-		if (country_id == "0") {
+		if (country == "0") {
 			// обращаемся к родителю и убираем класс все ок и добавляем ошибку
-			$('#country_id').parent().removeClass("has-success").addClass("has-error");
+			$('#country').parent().removeClass("has-success").addClass("has-error");
 			validRegionName = false;
 		} else {
-			$('#country_id').parent().removeClass("has-error").addClass("has-success");
+			$('#country').parent().removeClass("has-error").addClass("has-success");
 			validRegionName = true;
 		}
 
-		if (country_id == "0") {
+		if (country == "0") {
 			// обращаемся к родителю и убираем класс все ок и добавляем ошибку
-			$('#region_id').parent().removeClass("has-success").addClass("has-error");
+			$('#region').parent().removeClass("has-success").addClass("has-error");
 			validRegionName = false;
 		} else {
-			$('#region_id').parent().removeClass("has-error").addClass("has-success");
+			$('#region').parent().removeClass("has-error").addClass("has-success");
 			validRegionName = true;
 		}
 
@@ -107,8 +108,8 @@ $(document).ready(function(){
 
 			$.ajax({
 				type: "POST", // HTTP метод  POST или GET
-				url: "/php/wrap/comment/saving_form_with_commentary.php", //url-адрес, по которому будет отправлен запрос
-				dataType:"text", // Тип данных,  которые пришлет сервер в ответ на запрос ,например, HTML, json
+				url: "/php/views/comment_save.php", //url-адрес, по которому будет отправлен запрос
+				dataType: "text", // Тип данных,  которые пришлет сервер в ответ на запрос ,например, HTML, json
 				data: {
 					"lastName": lastName,
 					"firstName": firstName,
@@ -116,14 +117,16 @@ $(document).ready(function(){
 					"phoneName": phoneName,
 					"emailName": emailName,
 					"commentName": commentName,
-					"country_id": country_id,
-					"city_id": city_id
+					"country": country,
+					"city": city
 				}, //данные, которые будут отправлены на сервер (post переменные)
 				success:function(response){
-					// alert("");
+					alert("data " + data);
+					alert("save comment");
 					location.href="/view.html"
 				},
 				error:function (xhr, ajaxOptions, thrownError){
+					alert("data " + data);
 					alert("Error save comment: " + ajaxOptions + ", thrownError: " + thrownError);
 					location.href="/comment.html"
 				}
@@ -131,7 +134,3 @@ $(document).ready(function(){
 		}
 	})
 });
-
-
-
-

@@ -1,11 +1,7 @@
-/**
- * Created by Sirotkin on 02.03.2017.
- */
-
 /*
-* При полной загрузке документа
-* мы начинаем определять события
-*/
+ * При полной загрузке документа
+ * мы начинаем определять события
+ */
 $(document).ready(function () {
     /*
      * На выборе селекта страны — вешаем событие,
@@ -13,7 +9,7 @@ $(document).ready(function () {
      * и с помощью ajax запроса получать список
      * городов для вставки в следующий селект
      */
-    $('#country_id').change(function () {
+    $('#country').change(function () {
         /*
          * В переменную country_id положим значение селекта
          * (выбранная страна)
@@ -25,8 +21,8 @@ $(document).ready(function () {
          * не будем ничего делать
          */
         if (country_id == '0') {
-            $('#region_id').html('<option>- выберите город -</option>');
-            $('#region_id').attr('disabled', true);
+            $('#region').html('<option>- выберите город -</option>');
+            $('#region').attr('disabled', true);
             return(false);
         }
         /*
@@ -34,16 +30,16 @@ $(document).ready(function () {
          * и блокируем его через атрибут disabled
          * туда мы будем класть результат запроса
          */
-        $('#region_id').attr('disabled', true);
-        $('#region_id').html('<option>загрузка...</option>');
+        $('#region').attr('disabled', true);
+        $('#region').html('<option>загрузка...</option>');
         /*
          * url запроса городов
          */
-        var url = '/php/wrap/comment/request_cities_in_region.php';
+        var url = '/php/views/comment_loadCitiesInRegion.php';
 
         $.post(
             url,
-            "country_id=" + country_id,
+            "country_id=" + country,
             function (result) {
                 /*
                  * В случае неудачи мы получим результат с type равным error.
@@ -63,14 +59,14 @@ $(document).ready(function () {
                      * проходимся по пришедшему от бэк-энда массиву циклом
                      */
                     var options = '';
-                    $(result.regions).each(function() {
+                    $(result.arrName).each(function() {
                         /*
                          * и добавляем в селект по городу
                          */
-                        options += '<option value="' + $(this).attr('id') + '">' + $(this).attr('title') + '</option>';
+                        options += '<option value="' + $(this).attr('id') + '">' + $(this).attr('name') + '</option>';
                     });
-                    $('#region_id').html(options);
-                    $('#region_id').attr('disabled', false);
+                    $('#region').html(options);
+                    $('#region').attr('disabled', false);
                 }
             },
             "json"

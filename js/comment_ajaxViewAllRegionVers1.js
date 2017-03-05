@@ -1,19 +1,18 @@
 /**
  * Created by Sirotkin on 02.03.2017.
+ *
  */
 $.ajax({
     type: "POST",
-    url: "/php/wrap/comment/request_all_region.php",
-    dataType: "text",
+    url: "/php/views/comment_allRegion.php",
+    dataType: "json",
     //data: "",
     success: function(data){
-        data = JSON.parse(data);
-
         var output="<option value='0' >- выберите страну -</option>";
-        for (var i in data.region) {
-            output+="<option value=" + data.region[i].id + ">" + data.region[i].name + "</option>";
+        for (var i in data.arrName) {
+            output+="<option value=" + data.arrName[i].id + ">" + data.arrName[i].name + "</option>";
         }
-        document.getElementById("country_id").innerHTML=output;
+        document.getElementById("country").innerHTML=output;
     },
     error: function(){
         alert('Проверьте подключение к php серверу.');

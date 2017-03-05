@@ -1,12 +1,10 @@
 <?php
 	function go_mysql($query) {
-		include('const.php');
+		require __DIR__ . '/const.php';
 		$con = mysqli_connect($host, $user, $password, $database);
-		
 		if ($con) {
-			mysqli_select_db($con,"ajax");
+			mysqli_select_db($con, "ajax");
 			$result = mysqli_query($con, $query);
-			# не забываем отключиться от базы
 			mysqli_close($con);
 			return ($result);
 		} else {

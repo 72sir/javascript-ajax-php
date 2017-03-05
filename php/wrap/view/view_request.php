@@ -1,5 +1,5 @@
 <?php
-	include("/../../db/connect.php");
+    require __DIR__ . '/../../db/connect.php';
 	
 	$query="SELECT u.id, u.lastName, u.firstName, u.middleName, u.phoneName, u.emailName, c.name, r.name, u.commentName
             FROM `users` as u
