@@ -30,6 +30,7 @@
 Просмотр статистики.  При обращении по относительному пути /stat/ должна выводиться таблица со списком тех регионов у которых количество комментариев больше 5, выводить так же и количество комментариев по каждому региону. Каждая строчка должны быть ссылкой на список города этого региона в котором отображается количество комментариев по этому городу.
 
 
-![alt text](https://yadi.sk/i/6fZgiaa63F62cZ)
-![alt text](https://yadi.sk/i/faDQrSaF3F62fH)
-![alt text](https://yadi.sk/i/6jjufmWx3F62gp)
+![comment](https://cloud.githubusercontent.com/assets/11897341/23590460/7e4b380e-01f1-11e7-8101-840fb3948cba.png)
+![stat](https://cloud.githubusercontent.com/assets/11897341/23590461/82fad44a-01f1-11e7-83b1-d58a834da529.png)
+![view](https://cloud.githubusercontent.com/assets/11897341/23590462/88927502-01f1-11e7-9703-3d7489b7631c.png)
+
